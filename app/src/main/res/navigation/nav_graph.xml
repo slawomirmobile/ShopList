@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskFragment">
+
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.shoplist.ui.fragments.TaskFragment"
+        android:label="Tasks"
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_taskFragment_to_addEditTaskFragment"
+            app:destination="@id/addEditTaskFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_taskAddFragment"
+            app:destination="@id/taskAddFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_deleteCompletedDialogFragment"
+            app:destination="@id/deleteCompletedDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditTaskFragment"
+        android:name="com.example.shoplist.ui.fragments.EditTaskFragment"
+        android:label="Edit your task"
+        tools:layout="@layout/fragment_edit_items" >
+        <argument
+            android:name="task"
+            app:argType="com.example.shoplist.model.Task"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addEditTaskFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskAddFragment"
+        android:name="com.example.shoplist.ui.fragments.TaskAddFragment"
+        android:label="Add your task"
+        tools:layout="@layout/fragment_add_items">
+    <argument
+        android:name="task"
+        app:argType="com.example.shoplist.model.Task"
+        app:nullable="true"
+        android:defaultValue="@null"
+        />
+    <argument
+        android:name="title"
+        app:argType="string" />
+        <action
+            android:id="@+id/action_taskAddFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteCompletedDialogFragment"
+        android:name="com.example.shoplist.ui.fragments.DeleteCompletedDialogFragment"
+        android:label="DeleteCompletedDialogFragment" />
+
+
+</navigation>

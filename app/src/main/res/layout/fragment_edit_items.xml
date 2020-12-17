@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    tools:context=".ui.fragments.EditTaskFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your task!"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox_important_add_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Zaznacz jeśli zadanie jest ważne"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextAdd"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAdd" />
+
+    <TextView
+        android:id="@+id/textView_created_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Data utworzenia zadania"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox_important_add_task"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_important_add_task"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_important_add_task" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/textView_created_task"
+        app:layout_constraintTop_toBottomOf="@+id/textView_created_task" />
+</androidx.constraintlayout.widget.ConstraintLayout>
